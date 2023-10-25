@@ -40,7 +40,7 @@
 
 
 (define (gut-genug? schaetzwert x)
-(< (abs (- (quadrat schaetzwert) x)) 0.00001))
+(< (abs (- (quadrat schaetzwert) x)) 0.0000001))
 
 (define (mittelwert x y)
 (/ (+ x y) 2))
@@ -54,6 +54,6 @@ schaetzwert
 (wurzel-iter (verbessern schaetzwert x) x)))
 
 (define (wurzel x)
-(wurzel-iter 6.0 x))
+(wurzel-iter 31.0 x))
 
-(wurzel 4 )
+(wurzel 3 )
