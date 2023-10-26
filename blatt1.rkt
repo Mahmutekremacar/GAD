@@ -44,9 +44,7 @@ aufgabe1x
 (define (squared-max x y z)
   (define (quadrat b)
     (* b b))
-  (if (> (quadrat x) (quadrat y) )
-      (if (> (quadrat x) (quadrat z)) (quadrat x) ( quadrat z))
-      (if (> (quadrat y) (quadrat z)) (quadrat y) ( quadrat z))))
+  (max ( quadrat x ) (quadrat  y ) (quadrat  z) ))
 
 (println "--------------")
 (squared-max 10 21 -11)
