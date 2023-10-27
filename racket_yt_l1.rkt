@@ -37,7 +37,7 @@ Scheme prefers to give a small number of general forms.
 (define (if-f guard true false)
   (if guard true false))
 
-(print "------------")
+(println "------------")
 ;;(if-f #t 'hello (loop))
 ;; Racket is Call-by-Value, and thus call never termniates
 
@@ -51,5 +51,20 @@ Every language has a set of values
 An expression is any form that evaluates to a value
   Very important term to know!!|#
 
+(define (greater-than-0 x)
+  (if (> x 0)
+      (* 2 x)
+      (* -2 x)))
 
+(greater-than-0 5)
+
+
+;;Collatz Conjecture
+(define (even-or-odd x)
+  (if (equal? (modulo x 2) 0)
+      (/ x 2)
+      (+ (* 3 x) 1)))
+
+(even-or-odd 3)
+(even-or-odd 6)
 
