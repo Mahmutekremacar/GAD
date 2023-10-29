@@ -22,7 +22,7 @@
 #;(zahl-umdrehen 446)
 
 
-#;(define (zahl-umdrehen x)
+(define (zahl-umdrehen x)
   (define digits 0)
   
   #;(define (foo x)
@@ -41,38 +41,4 @@
   
    (um-iter x 0 (degit_loop x 100000000000000000000000000) ))
 
-#;(zahl-umdrehen 1234)
-
-
-
-(define (aufsteigendes-produkt? a b c d)
-  (if (< a b)
-      (if (< b c)
-          (if (< c d)
-              (if (= d (+ a b c))
-                  #t
-                  #f)
-              #f)
-          #f)
-      #f))
-
-#;(define (aufsteigendes-produkt? a b c d) (and (< a b) (< b c) (< c d) (= d (+ a b c))))
-
-
-(define (f1 a b) (and (not (and a b)) (or a b ) a b) ) 
-
-(define (f2 a b c) (or a (and a b (not c)) (and (not a) c) (and (not a) (not b) c)))
-
-(define (f3 a b c d) (and (xor (not a) b) (not (or a (not b ) c)) (or (not d) (not c) (not b) (not a)) ))
-
-
-
-
-
-
-
-
-
-
-
-
+(zahl-umdrehen 1234)
