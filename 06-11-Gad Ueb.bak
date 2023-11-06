@@ -1,0 +1,20 @@
+#lang racket
+(define (zerteilen position rest)
+  (if (= position 1 ) rest
+      (+ (* position (remainder rest 10 )) (zerteilen (- position 1) (quotient rest 10)))))
+
+(zerteilen 10 2)
+
+(define (isbn-test isbn)
+  ( ergebnis(remainder (zerteilen 9 isbn) 11)))
+
+(define (ergebnis rest)
+  (cond ((= rest 10 ) "X")
+  (else rest)))
+
+
+(define (is-big x)
+  ((if (> x 5) x
+       (values (println x) (is-big (+ x 1))))))
+
+(is-big 1)
