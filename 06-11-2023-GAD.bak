@@ -1,0 +1,9 @@
+#lang racket
+
+
+(define (ggt a b )
+  (if (= b 0)
+      a
+      (ggt b (remainder a b))))
+
+(ggt 13 0)
