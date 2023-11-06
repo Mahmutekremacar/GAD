@@ -19,7 +19,7 @@
           (- a (sqrt (* b b)))
           (fakt n ) )))
 
-;; Aufgabe 3
+;; Aufgabe 4
 (define (kubiksumme x)
 (define (summer x sum )
   (define (cuber x) (* x x x))
@@ -31,7 +31,19 @@
   (if (> x 10) (foo x sum) (if (= x 10) (cuber (+ sum 1)) (cuber (+ x sum))) ))
   (summer x 0))
 
-(kubiksumme 101402)
-(kubiksumme 34567)
+;(kubiksumme 101402)
+;(kubiksumme 34567)
 
 ;;erledigt
+
+;; Aufgabe 5
+
+(define (caesar_encrypt n k)
+  (define (caesar_encrypt-iter n k new-num mal)
+  (if (> (quotient n 10) 0 )
+      (caesar_encrypt-iter (quotient n 10) k (*(* mal 10) (+ (remainder n 10) k))  (+ mal 1))
+      (+ (*(* mal 10) n) (+ new-num k))))
+  (caesar_encrypt-iter n k 0 1)) 
+
+
+(caesar_encrypt 322 1)
