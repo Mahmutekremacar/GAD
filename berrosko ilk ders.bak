@@ -31,3 +31,11 @@ r
   (+ (quadrat x)(quadrat y)))
 
 (quadratsumme 6 8)
+
+(define (iter x)
+  (define (printer x) (println x) + (+ x 1))
+  (if (> 100 x)
+      (iter (printer x))
+      (println x)))
+
+

@@ -38,4 +38,7 @@ r
       (iter (printer x))
       (println x)))
 
+(define (fonksiyon x)
+  (* x x))
 
+(fonksiyon 5)
