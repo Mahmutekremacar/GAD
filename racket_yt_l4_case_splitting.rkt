@@ -137,7 +137,11 @@ Using cond, write a function that takes a list l and an index x and returns...
 
 #;(index-returner '(1 2 3 4) 3)
 
-  
+(define x '(a b c d e ))
+
+(car (cdr x))
+
+
 
 
 
