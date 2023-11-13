@@ -66,13 +66,61 @@
 (define (f3 a b c d) (and (xor (not a) b) (not (or a (not b ) c)) (or (not d) (not c) (not b) (not a)) ))
 
 
+(define f (lambda (x) x))
+(define (double g)
+  (lambda (x) (g (g x))))
+
+(f 1) ;; ((lambda (x))1) = > 1
+((double f) 42) #| ((lambda (x) (f (f x))) 42)
+                   (f(f 42))
+                   (f 42)
+                    42|#
+((double (lambda (x) (* x 2))) 2)
+;;((lambda (y) ((lambda (x) (* x 2)) ((lambda (x) (* x 2)) y))) 2)
+
+;;(* ((lambda (x) (* x 2)) 2) 2)
+;;(*(* 2 2) 2)
+;;(* 4 2)
+;;8
+
+
+#|
+Write a function (foo f), such that ((foo f ) x) ==> (f |x|)
+|#
+
+(define (abs x)
+  (if (> 0 x) (- x) x))
+
+
+(define (foo f)
+  (lambda (x) (f (abs x))))
+
+((foo (lambda (x) x)) -500)
 
 
 
+;;;;;;;;;;;;
+
+#|
+(define (f x) x)
+;;equiv
+(define f (lambda (x) x))
+|#
+;;;;;;;;;;;;;
+
+(let ([f (lambda (x) x)])
+  (f 2))
 
 
+(define ((test x) y)
+  (+ x y))
 
+(define add27 (test 27))
 
+(add27 2)
 
+(map (lambda (x) (* x x))
+     '(1 2 3 4 5))
 
-
+(map (lambda(x y) (* x y) )
+     '(1 2 3 4 5 6 7 8) '(1 2 3 4 5 6 7 8)) 

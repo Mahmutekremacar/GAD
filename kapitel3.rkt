@@ -1,5 +1,5 @@
 #lang racket
-#;(konstr-rat <z> <n>)
+(konstr-rat <z> <n>)
 
 ;(zaehler <x>)
 
