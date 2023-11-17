@@ -12,9 +12,6 @@
   (cond ((= rest 10 ) "X")
   (else rest)))
 
+(define x (lambda (x) (print "X")))
 
-(define (is-big x)
-  ((if (> x 5) x
-       (values (println x) (is-big (+ x 1))))))
 
-(is-big 1)
