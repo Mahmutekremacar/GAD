@@ -50,5 +50,5 @@ the given number must be diminished step by step
 
 #;(zahl-umdrehen 1234)
 ;; ziff ters cevire loopa uygula
-;;
+
 
