@@ -20,3 +20,29 @@
 ;erl
 
 ;;Aufgabe 3
+
+(define (isbn-test isbn)
+  (define (iter isbn digit total)
+    (define (digitTimesAndDim digit total)
+      (iter (quotient isbn 10) (- digit 1) (+ total (* (remainder isbn 10)digit))))
+    (if (>= digit 0) (digitTimesAndDim digit total) total))
+  (if (= (remainder (iter isbn 9 0) 11) 10 ) "X" (remainder (iter isbn 9 0) 11))) 
+
+(println "---------")
+(isbn-test 344615497)
+(isbn-test 026201153) 
+(isbn-test 392511825)
+;erl
+
+;;Aufgabe 4
+
+(define (zylinder-kegel radius-zylinder hoehe-zylinder radius-kegel hoehe-kegel)
+  (define pi  3.1415926535897932384626433832795 )
+  (/(* pi (expt radius-zylinder 2) hoehe-zylinder )
+    (/(* pi (expt radius-kegel 2) hoehe-kegel) 3)))
+(println "---------")
+
+(zylinder-kegel 3 5 3 5)
+;erl
+
+;;Aufgabe 5
