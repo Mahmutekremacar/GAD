@@ -23,7 +23,7 @@ the given number must be diminished step by step
 
 (nat-wuerzel 6)
 
-#;(define (zahl-umdrehen x)
+(define (zahl-umdrehen x)
   (define digit 1)
   (define (foo x)
     (ziff (/ x 10)) + (+ 1 digit))
@@ -48,7 +48,7 @@ the given number must be diminished step by step
   (zahl-iter x 0 1))
   
 
-#;(zahl-umdrehen 1234)
+(zahl-umdrehen 1234)
 ;; ziff ters cevire loopa uygula
 
 
