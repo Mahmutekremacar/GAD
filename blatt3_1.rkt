@@ -1,11 +1,18 @@
 #lang racket
 ;;Aufgabe 1
 
-(define (sin-approx x)
+#;(define (sin-approx x)
   (define (sonst x) (lambda (x) (- (* 3 (sin-approx (/ x 3))) (* 4 ( expt((sin-approx (/ x 3)) 3))))))
   (if (> x 0.1) (sonst x) x ))
 
-(sin-approx 30)
+(define (sinus-approx x )
+  (if (<= x 0.1) 
+      x
+      (- (* 3.0 (sinus-approx (/ x 3.0))) (* 4.0 (expt (sinus-approx (/ x 3.0)) 3.0)))))
+(println ",,,,")
+
+(sinus-approx 750)
+;;erl
 
 ;;Aufgabe 2
 
@@ -14,9 +21,11 @@
     (if (> x 0) (count-perm-iter (- x 1) (* total x)) total))
   (count-perm-iter x 1))
 
+(newline)
 (count-perm 2)
 (count-perm 3)
 (count-perm 5)
+(newline)
 ;erl
 
 ;;Aufgabe 3
