@@ -8,7 +8,7 @@
 (ganzzahlige-wurzel? 25)
 (ganzzahlige-wurzel? 24)
 
-
+;;erl
 
 ;; Aufgabe 2
 
