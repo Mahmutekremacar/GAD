@@ -23,6 +23,6 @@
 (= (* (zaehler x) (nenner y))
 (* (zaehler y) (nenner x))))
 
-
+;;
 (define x '(a b c d e f g))
 (cdr (car x))
