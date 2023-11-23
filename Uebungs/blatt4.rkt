@@ -28,7 +28,8 @@
   (if (= n 0 ) total (zahl-iter (quotient n 10) (+ (remainder n 10) total))))
   (expt (zahl-iter n 0) 3))
 
-(kubiksumme 101042)
+(kubiksumme 1010425343)
+(kubiksumme -1010425343)
 
 (kubiksumme 34567)
 (println "----------")
@@ -39,7 +40,7 @@
 
 ;; Aufgabe 5
 
-(define (caesar_encrypt n k)
+#;(define (caesar_encrypt n k)
   (define (iter n neuN digit k)
     (if (= n 0) neuN (iter (quotient n 10) (* (remainder n 10) digit)))
     )
