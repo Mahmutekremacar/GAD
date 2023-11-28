@@ -62,5 +62,5 @@ bigger or equal the original one (if not ) add +10
 (define (konst-addierer n )
   (lambda (x n) (+ x n)))
 
-(define plus1 (konst-addierer 1)
-  (plus1 98))
+#;(define plus1 (konst-addierer 1)
+  (plus1 98)) 

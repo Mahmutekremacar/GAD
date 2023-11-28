@@ -1,8 +1,31 @@
 #lang racket
 
 
+;;Aufgabe 1
 (define (euler-n n)
-  (define wert 1)
-  (define (euler-iter n)
-    (* wert n) + (euler-n (- n 1)))
-  (if (>= n 0)  (euler-iter n) (/ 1 wert))
+  (define (fakt n total)
+    (if (<= n 0) total (fakt (- n 1) (* total n)))
+    )
+  (define (eu-iter n neuN e)
+    (if (< neuN 0) e (eu-iter n (- neuN 1) (+ e (/ 1 (fakt neuN 1)))))
+    )
+  (eu-iter n n 0)
+  )
+
+
+#;(euler-n 0) 
+#;(euler-n 1)
+#;(euler-n 2)
+
+#;(euler-n 27) 
+
+;;erl
+
+
+;;Aufgabe 2
+
+
+
+
+
+ 
