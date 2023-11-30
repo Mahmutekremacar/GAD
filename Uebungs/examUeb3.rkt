@@ -24,7 +24,7 @@
 (count-perm 5)
 (newline)
 ;;
-(println "Aufgabe 3")
+(println "Aufgabe 3")c
 
 (define (isbn-test x)
   (define (isbn-iter x digits ans)
