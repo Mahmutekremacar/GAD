@@ -57,22 +57,20 @@ output the list as reversed
 ;;erl
 
 (println "Aufgabe 5")
-#;(define (caesar_encrypt_list data key)
-  )
+
+ 
+
 (define (caesar_encrypt_list data key)
-  (define (shift-char c k)
-    (modulo (+ c k) 10))
+  (define (caesar_encrypt_list_iter data key key_backup)
+    (if (null? data)
+        (list)
+        (if (null? (cdr key))
+            (cons (remainder (+ (car data) (car key)) 10) (caesar_encrypt_list_iter (cdr data) key_backup key_backup))
+            (cons (remainder (+ (car data) (car key)) 10) (caesar_encrypt_list_iter (cdr data) (cdr key) key_backup))))
+    )
 
-  (define (encrypt-element element key)
-    (map + element key))
-
-  (let loop ((data data) (key key) (result '()))
-    (cond
-      ((null? data) (reverse result))
-      (else
-       (let ((encrypted-element (encrypt-element (car data) (car key))))
-         (loop (cdr data) (if (null? (cdr key)) key (cdr key))
-               (cons encrypted-element result)))))))
+  (caesar_encrypt_list_iter data key key)
+  )
 
 ; Beispiel:
 (displayln (caesar_encrypt_list (list 1 2 3 4 5 6) (list 1 3 3 7)))
