@@ -70,4 +70,10 @@
   )
 
 (expandiere '(7 b a 3 c))
-(expandiere '(2 b 2 b c)) 
+(expandiere '(2 b 2 b c))
+
+(display "Aufgabe 3")
+(define (loeschen liste n)
+  (if (> n 0) (loeschen (cdr liste) (- n 1)) liste))
+(newline)
+(loeschen '(2 3 4 5 6 7) 3)
