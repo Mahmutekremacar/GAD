@@ -47,5 +47,40 @@
    (if (> (remainder n 10) ans) (max-iter ( quotient n 10) (remainder n 10)) ans))
   (max-iter (quotient n 10) (remainder n 10)))
 (newline)
-(maxziffer 3475376) 
- 
+(maxziffer 3475376)
+
+
+(display "Aufgabe 5")
+(newline)
+(define (sum x y )
+  (define (n x ) (+ x 1))
+  (cond
+    [(= y 0) x]
+    [else (n (sum x (- y 1)))]))
+
+(sum 1 2)
+
+(display "Aufgabe 6")
+
+(define (mul x y)
+  (cond
+    [(= y 0) 0]
+    [else (sum x (mul x (- y 1)))]))
+(newline)
+(mul 2 2)
+
+
+(display "Aufgabe 7")
+(newline)
+
+(define (q n)
+  (cond
+    [(= n 1) 1]
+    [(= n 2) 1]
+  [else (+ (q (- n (q (- n 1) ))) (q (- n (q (- n 2)))))]))
+(newline)
+(q 1)
+(q 2)
+(q 15)
+(q 16)
+(q 35)
