@@ -45,7 +45,29 @@
 (println "Aufgabe 2")
 
 #;(define (expandiere sym-liste)
-  (define (expandiere-iter sym-liste num)
-    (cond
-      [(number? (car sym-liste))]))
+  (define (iter liste neuListe num)  
+    (if (integer? (car liste))
+     (if (>= num 0) (iter liste (cons (cadr liste ) neuListe ) (- (car liste) 1)) neuListe) (iter (cdr liste) neuListe num)))
+  (iter sym-liste '() 0))
+
+
+
+(define (expandiere sym-liste)
+  (define (expandiere-iter sym-liste anzahl symbol)
+    (if (empty? sym-liste)
+        '()
+        (if (= anzahl 1)
+            (if (number? (car sym-liste))
+                (expandiere-iter (cdr sym-liste) (car sym-liste) (cadr sym-liste))
+                (cons (car sym-liste) (expandiere-iter (cdr sym-liste) 1 symbol))
+                )
+            (cons symbol (expandiere-iter sym-liste (- anzahl 1) symbol))
+            )
+        )
+    )
+
+  (expandiere-iter sym-liste 1 '())
   )
+
+(expandiere '(7 b a 3 c))
+(expandiere '(2 b 2 b c)) 
