@@ -44,7 +44,7 @@
 
 (println "Aufgabe 2")
 
-#;(define (expandiere sym-liste)
+(define (expandiere sym-liste)
   (define (expandiere-iter sym-liste num)
     (cond
       [(number? (car sym-liste))]))
