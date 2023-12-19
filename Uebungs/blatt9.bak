@@ -26,5 +26,5 @@
 (newline)
 (display "Aufgabe 4")
 (newline)
-;;
+
 (newline)
