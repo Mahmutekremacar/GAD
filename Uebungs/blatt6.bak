@@ -165,3 +165,21 @@ bigger or equal the original one (if not ) add +10
 (define struktur4 (cons (cons 10 (cons 7 (cons 8 (cons 9 (cons 3 null))))) (cons (cons null (cons 6 (cons 1 (cons 0 (cons 2 4)))))(cons 3 3))))
 (sdraw struktur4 #:null-style'/)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
