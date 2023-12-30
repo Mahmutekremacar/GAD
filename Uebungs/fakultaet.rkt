@@ -16,3 +16,4 @@ produkt
 (fak-iter (* zaehler produkt) (+ zaehler 1) n)))
 
 (fakultaet 6)
+;;
