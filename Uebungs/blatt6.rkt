@@ -11,7 +11,7 @@ ab start) liefern, die sowohl durch 3 als auch durch 7 teilbar ist.
 Falls es keine n-te Zahl gibt, die diese Forderung
  erfüllt, soll das Resultat 0 sein.
 |#
-
+;;
 (define (zaehlen start ende n)
   (define (iter start ende n zahl)
     (cond
