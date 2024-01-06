@@ -32,7 +32,7 @@
       (compress-iter (cdr liste) (car liste) 1))
   )
 
-;;
+
 
 
 (compress '(a b c))
