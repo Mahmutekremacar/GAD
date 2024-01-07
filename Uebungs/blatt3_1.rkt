@@ -12,7 +12,7 @@
 (println ",,,,")
 
 (sinus-approx 750)
-;;erl
+;;erll
 
 ;;Aufgabe 2
 
