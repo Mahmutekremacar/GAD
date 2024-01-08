@@ -10,7 +10,7 @@ aufgabe1x
 (g 1 2 3)
 (g 3 11 2)
 
-
+;;
 (define (my-max x y)
  (if (> x y)
      x
