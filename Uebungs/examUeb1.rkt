@@ -21,7 +21,7 @@ x
 (g 3 11 2)
 (newline)
 
-;;Aufgabe 3 
+;;Aufgabe 3
 (println "Aufgabe 3")
 
 (define (my-max x y)
