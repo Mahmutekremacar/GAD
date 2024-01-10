@@ -17,7 +17,7 @@
 (nat-wuerzel 5)
 (nat-wuerzel 11)
 (newline)
-
+;;
 (println "Aufgabe 2")
 
 (define (zahl-umdrehen x)
