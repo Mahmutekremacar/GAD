@@ -23,11 +23,4 @@
   (filter (lambda (x) (zero? (remainder x 2)))
           (map (lambda (x) (* x x)) lstx))) 
 
-(evens numsX)
-(println "~~~~~")
-(sort '( 5 8 6 2  9 1 2 3) (lambda (x y) (< x y)))
-
-;; == (sort '( 5 8 6 2  9 1 2 3) <)
-
-(sort '("s" "p" "a" "m") string>?)
-(sort '("s" "p" "a" "m") string<?)
+(evens numsX) 
