@@ -62,22 +62,36 @@
 
 (define (vector-add vector1 vector2)
   
-  (define (wie-lang v laenge)
-    (cond
-      [(empty? (cdr v)) (+ 1 laenge)]
-      [else (wie-lang (cdr v) (+ laenge 1))]))
   
-  (define (adder v zeros)
-    (if (= 0 zeros)
-        v
-        (adder (vector-append v #(0)) (- zero 1))))
+  
+  
 
-  (define (vector-add-iter vector1 vector2 sum v1lang v2lang  )
-    (if (> v1lang v2lang)
-        
-        )
-    
-    )
+  (define (vector-add-iter vector1 vector2  )
+    (if (> (vector-length vector1) (vector-length vector2))
+        (vector-add-iter vector1 (vector-append vector2 #(0)))
+        (if (< (vector-length vector1) (vector-length vector2))
+            (vector-add-iter (vector-append vector1 #(0)) vector2 )
+            (vector-map + vector1 vector2))))
+  
+  (vector-add-iter vector1 vector2))
 
-  )
-#;(wie-lang (vector->list vector1)) #;(wie-lang (vector->list vector2))
+(vector-add #(1 2 3) #(4 5 6))
+
+;;Aufgabe 5
+
+(define (bubble-sort vec comparator)
+  (vector-sort vec comparator))
+
+(bubble-sort
+(vector 9 1 8 4 8 1 5 9 23 3 22 0) >)
+(bubble-sort
+(vector 9 1 8 4 8 1 5 9 23 3 22 0) <)
+
+
+;;Aufgabe 6
+
+(define (vector-apply start operator vecVal vecIndecies)
+  (define (iter start operator vecVal vecIndecies times sum)
+    (if (= 0 times)
+         sum
+         (iter start operator vecVal vecIndecies (- times 1) (operator sum start (vector-ref))))))
