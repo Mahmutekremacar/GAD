@@ -61,7 +61,7 @@
 ;;Aufgabe 4
 
 (define (vector-add vector1 vector2)
-  
+  ;;
   
   
   
@@ -91,7 +91,16 @@
 ;;Aufgabe 6
 
 (define (vector-apply start operator vecVal vecIndecies)
+
   (define (iter start operator vecVal vecIndecies times sum)
-    (if (= 0 times)
+    (if (= times 0)
+        (iter start operator vecVal vecIndecies (+ times 1) (operator sum start (vector-ref vecVal (vector-ref vecIndecies times))))
+    (if (> times (- (vector-length vecIndecies) 1))
          sum
-         (iter start operator vecVal vecIndecies (- times 1) (operator sum start (vector-ref))))))
+         (iter start operator vecVal vecIndecies (+ times 1) (operator sum (vector-ref vecVal (vector-ref vecIndecies times))))
+         )))
+  (iter start operator vecVal vecIndecies 0 start)) 
+
+
+(vector-apply 0 + #(1 2 3 4) #(0 1 2))
+(vector-apply 1 * #(3 1 2 9) #(2 1 0)) 
